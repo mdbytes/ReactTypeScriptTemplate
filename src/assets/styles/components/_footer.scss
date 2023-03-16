@@ -1,0 +1,40 @@
+footer {
+  .logo-font {
+    margin-left: 0.5rem;
+    font-size: 1.6rem;
+    color: $secondary;
+  }
+
+  h5 {
+    color: $success;
+  }
+
+  li {
+    .nav-link {
+      font-weight: 100;
+
+      &:hover {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .open-source-icons {
+    a {
+      width: auto;
+
+      i {
+        color: $white;
+        font-size: 2rem;
+        font-weight: 100;
+      }
+    }
+  }
+
+  .site-logo-holder {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+}

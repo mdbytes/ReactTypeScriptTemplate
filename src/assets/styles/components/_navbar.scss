@@ -1,0 +1,16 @@
+nav {
+  .navbar-toggler {
+    margin-right: 2rem;
+    box-shadow: 0 0 0.5rem rgba($secondary, 0.7);
+  }
+
+  form {
+    .btn {
+      border: none;
+      box-shadow: 0 0 0.5rem rgba($secondary, 0.7);
+      margin-right: 2rem;
+
+      color: $secondary;
+    }
+  }
+}

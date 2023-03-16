@@ -1,0 +1,25 @@
+@keyframes contentCrawl {
+  0% {
+    right: -1000rem;
+  }
+
+  100% {
+    right: 100%;
+    //left: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+.filter-logo-green {
+  filter: invert(29%) sepia(99%) saturate(2568%) hue-rotate(100deg)
+    brightness(98%) contrast(107%);
+}

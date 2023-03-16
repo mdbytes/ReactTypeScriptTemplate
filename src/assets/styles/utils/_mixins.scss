@@ -1,0 +1,11 @@
+@mixin pageBackground {
+  background-color: #f2f2f2;
+}
+
+@mixin grayImageShadow {
+  box-shadow: 1rem 1rem 1rem 1rem rgba(#000, 0.7);
+}
+
+@mixin textBoxShadow {
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.35rem rgba(#000, 0.2);
+}

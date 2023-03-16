@@ -1,0 +1,65 @@
+#features {
+  padding-top: 50px;
+
+  .row {
+    height: 100%;
+  }
+
+  .card {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      width: 275px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .card-title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .card-body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .btn {
+        margin: 2rem auto;
+      }
+    }
+
+    .card-text {
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+      text-align: justify;
+    }
+  }
+
+  .diverse-needs {
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 3rem;
+    }
+
+    .image-holder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      width: 80%;
+      margin-bottom: 3rem;
+      border-radius: $borderRadius;
+      box-shadow: 0 0 2rem rgba($dark, 0.9);
+    }
+  }
+}

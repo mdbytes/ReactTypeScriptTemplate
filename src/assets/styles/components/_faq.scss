@@ -1,0 +1,21 @@
+.faq {
+  .accordion {
+    button {
+      font-size: 1.5rem;
+      font-weight: 600;
+
+      &[aria-expanded='true'] {
+        background-color: $primary;
+        color: $secondary;
+
+        &::after {
+          color: $secondary;
+        }
+      }
+    }
+
+    .accordion-body {
+      padding-bottom: 2rem;
+    }
+  }
+}

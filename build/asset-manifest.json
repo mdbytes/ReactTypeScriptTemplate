@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.28aaa099.css",
+    "main.js": "/static/js/main.c9f40083.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/wild-things.jpeg": "/static/media/wild-things.14ba29e38052c7eae2cb.jpeg",
+    "static/media/north-park.jpeg": "/static/media/north-park.9061250d37f68f2d0b5d.jpeg",
+    "static/media/college.jpeg": "/static/media/college.22539309e1b75eb3de88.jpeg",
+    "static/media/careers.jpeg": "/static/media/careers.ddf52d2a54113cb7b931.jpeg",
+    "static/media/money-matters.jpeg": "/static/media/money-matters.7c8bc3c106b52b4a274a.jpeg",
+    "static/media/OnlineMeeting.png": "/static/media/OnlineMeeting.ecf13eb04b3a3d0b007f.png",
+    "static/media/expertise.png": "/static/media/expertise.27a00c391ea80ffea955.png",
+    "static/media/perspective.png": "/static/media/perspective.f66afbf66de2aa0c7668.png",
+    "static/media/flexible.png": "/static/media/flexible.4285a5f619b14f1bd8d0.png",
+    "static/media/martin.jpeg": "/static/media/martin.53b3c016fe3d775d7852.jpeg",
+    "static/media/team-landscape.png": "/static/media/team-landscape.ee0d79d4027b7f62ee46.png",
+    "static/media/Winner1.png": "/static/media/Winner1.1ae3f745e67f27f87d23.png",
+    "static/media/Startup.png": "/static/media/Startup.f5a2dcffc8d31b801c13.png",
+    "static/media/WebDevCustom.png": "/static/media/WebDevCustom.d4df4b356dff3afe1d0e.png",
+    "static/media/WebDeveloper.png": "/static/media/WebDeveloper.fe1d288de283be33f0f1.png",
+    "static/media/global.png": "/static/media/global.56c4fcb5bd4967575a8c.png",
+    "static/media/Growth.png": "/static/media/Growth.86aa21bbc19362fa81bb.png",
+    "index.html": "/index.html",
+    "static/media/logo.svg": "/static/media/logo.928f956d9c8ebcffb98a8e917154a81a.svg",
+    "main.28aaa099.css.map": "/static/css/main.28aaa099.css.map",
+    "main.c9f40083.js.map": "/static/js/main.c9f40083.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28aaa099.css",
+    "static/js/main.c9f40083.js"
+  ]
+}

@@ -1,0 +1,65 @@
+.contact {
+  .container {
+    padding: 5rem 0;
+  }
+
+  .cta-info {
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: $warning;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    ul {
+      li {
+        padding-left: 2rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+
+        i {
+          font-size: 2rem;
+          color: $info;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: $warning;
+    }
+
+    #submit {
+      visibility: hidden;
+    }
+
+    #submit-button {
+      margin-top: 1rem;
+
+      &:visited,
+      &:active {
+        background-color: $primary;
+      }
+    }
+
+    #success-message,
+    #error-message {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
