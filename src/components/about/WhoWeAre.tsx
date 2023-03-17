@@ -11,8 +11,6 @@ export const WhoWeAre = () => {
       <Strengths />
       <hr className='section' />
       <OurWork />
-      <hr className='section' />
-      <Leadership />
     </div>
   );
 };
