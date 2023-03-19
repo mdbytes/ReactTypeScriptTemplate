@@ -9,6 +9,7 @@
 <li>Packaging support from react-scripts with Webpack and Babel behind the scene.</li>
 <li>File types include TypeScript, JavaScript, Jsx, Sass, CSS, .png, .jpeg, .jpg and .webp</li>
 <li>Routing support with the latest version of React Router (v.6.9)</li>
+<li>To be consistent with recent trends, all components are functional with hooks used as appropriate.</li>
 <li>UI support with the latest <a>Bootstrap</a> framework (v5.2).</li>
 <li>Support for animations with <a>Animate.css</a></li>
 <li>A contact form with email support from <a>Email.js</a>.  Developers and users will need to acquire their own authorization keys.</li>
