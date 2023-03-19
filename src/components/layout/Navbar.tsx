@@ -1,32 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { MutableRefObject, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 
+type InputRef = MutableRefObject<HTMLInputElement> | MutableRefObject<null>;
+type ButtonRef = MutableRefObject<HTMLButtonElement> | MutableRefObject<null>;
+type NavLinkRef = MutableRefObject<HTMLElement> | MutableRefObject<null>;
+
 export const Navbar = () => {
+  let searchTermRef: InputRef = useRef(null);
+  let navTogglerRef: ButtonRef = useRef(null);
+  let homeRef: NavLinkRef = useRef(null);
+  let aboutRef: NavLinkRef = useRef(null);
+  let faqRef: NavLinkRef = useRef(null);
+  let contactRef: NavLinkRef = useRef(null);
+  let privacyRef: NavLinkRef = useRef(null);
+  let linkRefs: NavLinkRef[] = [homeRef, aboutRef, contactRef, privacyRef];
+
   const onSearchSubmit = (evt: React.SyntheticEvent) => {
     evt.preventDefault();
-    let searchTerm: HTMLInputElement | null;
-    searchTerm = document.querySelector('#search-term');
     let url =
       'https://www.google.com/search?q=mdbytes.com+md+web+technologies+' +
-      searchTerm?.value;
+      searchTermRef?.current?.value;
     window.location.href = url;
   };
 
   useEffect(() => {
-    let navbarToggler: HTMLButtonElement | null;
-    let navLinks: NodeListOf<Element>;
-
-    if (document && document.querySelector('.navbar-toggler')) {
-      navbarToggler = document.querySelector('.navbar-toggler');
-      navLinks = document.querySelectorAll('.nav-link');
-
-      if (navbarToggler) {
-        for (let link of navLinks) {
-          link.addEventListener('click', () => {
-            navbarToggler?.click();
-          });
-        }
+    // Close the mobile nav display when a link is clicked
+    if (navTogglerRef) {
+      for (let link of linkRefs) {
+        link?.current?.addEventListener('click', () => {
+          navTogglerRef.current?.click();
+        });
       }
     }
   }, []);
@@ -44,6 +48,7 @@ export const Navbar = () => {
             />
           </a>
           <button
+            ref={navTogglerRef}
             className='navbar-toggler'
             type='button'
             data-bs-toggle='collapse'
@@ -58,6 +63,7 @@ export const Navbar = () => {
             <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
               <li className='nav-item'>
                 <NavLink
+                  ref={homeRef}
                   id='home-link'
                   className='nav-link'
                   aria-current='page'
@@ -67,22 +73,42 @@ export const Navbar = () => {
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink className='nav-link' aria-current='page' to='/about'>
+                <NavLink
+                  ref={aboutRef}
+                  className='nav-link'
+                  aria-current='page'
+                  to='/about'
+                >
                   About
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink className='nav-link' aria-current='page' to='/faq'>
+                <NavLink
+                  ref={faqRef}
+                  className='nav-link'
+                  aria-current='page'
+                  to='/faq'
+                >
                   FAQ
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink className='nav-link' aria-current='page' to='/contact'>
+                <NavLink
+                  ref={contactRef}
+                  className='nav-link'
+                  aria-current='page'
+                  to='/contact'
+                >
                   Contact
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink className='nav-link' aria-current='page' to='/privacy'>
+                <NavLink
+                  ref={privacyRef}
+                  className='nav-link'
+                  aria-current='page'
+                  to='/privacy'
+                >
                   Privacy
                 </NavLink>
               </li>
@@ -97,6 +123,7 @@ export const Navbar = () => {
             >
               <input
                 id='search-term'
+                ref={searchTermRef}
                 className='form-control me-2'
                 type='search'
                 placeholder='Custom Google Search'
