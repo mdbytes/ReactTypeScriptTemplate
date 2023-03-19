@@ -1,9 +1,55 @@
-import { useEffect } from 'react';
+import {
+  FormEvent,
+  FormEventHandler,
+  MutableRefObject,
+  useEffect,
+  useRef,
+} from 'react';
 import emailjs from '@emailjs/browser';
-import { sendEmail, confirmSend } from './utils';
 import { EMAILJS_USER } from '../../config/keys';
 
+type ButtonRef = MutableRefObject<HTMLButtonElement> | MutableRefObject<null>;
+type DivRef = MutableRefObject<HTMLDivElement> | MutableRefObject<null>;
+type FormRef = MutableRefObject<HTMLFormElement> | MutableRefObject<null>;
+
 export const ContactForm = () => {
+  let closeRef: ButtonRef = useRef(null);
+  let submitRef: ButtonRef = useRef(null);
+  let successRef: DivRef = useRef(null);
+  let errorRef: DivRef = useRef(null);
+  let contactRef: FormRef = useRef(null);
+
+  const confirmSend = () => {
+    if (closeRef.current && submitRef.current) {
+      closeRef.current.click();
+      submitRef.current.disabled = false;
+      submitRef.current.click();
+      submitRef.current.disabled = true;
+    }
+  };
+
+  const sendEmail: FormEventHandler = (e: FormEvent) => {
+    e.preventDefault();
+    let form: HTMLFormElement = e.target as HTMLFormElement;
+    emailjs.sendForm('service_998jv3x', 'template_gkvwqkc', form).then(
+      (result) => {
+        if (successRef.current && contactRef.current) {
+          successRef.current.innerHTML =
+            'Thanks!  We will reply to your message within 24 hours.';
+          contactRef.current.reset();
+        }
+      },
+      (error) => {
+        console.log(error);
+        if (errorRef.current && contactRef.current) {
+          errorRef.current.innerHTML =
+            'A problem was incurred sending your message.  Please try again later.';
+          contactRef.current.reset();
+        }
+      }
+    );
+  };
+
   useEffect(() => {
     emailjs.init(EMAILJS_USER);
   }, []);
@@ -11,7 +57,7 @@ export const ContactForm = () => {
   return (
     <div className='col-lg-6'>
       <div className='contact-form'>
-        <form id='form' onSubmit={sendEmail}>
+        <form id='form' onSubmit={(e) => sendEmail(e)} ref={contactRef}>
           <h3 className='display-4'>Contact Us</h3>
           <div className='form-group'>
             <label id='name-label' htmlFor='name'>
@@ -69,6 +115,7 @@ export const ContactForm = () => {
           <input
             id='submit'
             type='submit'
+            ref={submitRef}
             className='btn btn-primary'
             disabled
           />
@@ -89,6 +136,7 @@ export const ContactForm = () => {
                 </h5>
                 <button
                   id='close-modal'
+                  ref={closeRef}
                   type='button'
                   className='close'
                   data-bs-dismiss='modal'
@@ -119,8 +167,8 @@ export const ContactForm = () => {
             </div>
           </div>
         </div>
-        <div id='success-message'></div>
-        <div id='error-message'></div>
+        <div id='success-message' ref={successRef}></div>
+        <div id='error-message' ref={errorRef}></div>
       </div>
     </div>
   );

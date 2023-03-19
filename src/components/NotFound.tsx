@@ -12,9 +12,9 @@ import { Navbar } from './layout/Navbar';
 export const NotFound = () => {
   // Redirects users to home page 4 seconds after page loads
   useEffect(() => {
-    setTimeout(() => {
-      window.location.replace('/');
-    }, 4000);
+    // setTimeout(() => {
+    //   window.location.replace('/');
+    // }, 4000);
   }, []);
 
   return (
