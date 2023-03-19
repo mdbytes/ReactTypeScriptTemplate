@@ -1,7 +1,6 @@
 import { GlobalCompany } from './GlobalCompany';
 import { Strengths } from './Strengths';
 import { OurWork } from './OurWork';
-import Leadership from './Leadership';
 
 export const WhoWeAre = () => {
   return (
