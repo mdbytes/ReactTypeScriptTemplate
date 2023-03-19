@@ -14,7 +14,6 @@ export const Navbar = () => {
   let faqRef: NavLinkRef = useRef(null);
   let contactRef: NavLinkRef = useRef(null);
   let privacyRef: NavLinkRef = useRef(null);
-  let linkRefs: NavLinkRef[] = [homeRef, aboutRef, contactRef, privacyRef];
 
   const onSearchSubmit = (evt: React.SyntheticEvent) => {
     evt.preventDefault();
@@ -25,6 +24,14 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
+    let linkRefs: NavLinkRef[] = [
+      homeRef,
+      aboutRef,
+      faqRef,
+      contactRef,
+      privacyRef,
+    ];
+
     // Close the mobile nav display when a link is clicked
     if (navTogglerRef) {
       for (let link of linkRefs) {
