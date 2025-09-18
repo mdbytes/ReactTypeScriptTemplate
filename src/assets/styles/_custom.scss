@@ -9,6 +9,10 @@ $warning: #9f665e !default;
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
 // Resetting dark backgrounds to match the color theme
 .bg-dark {
   background-color: $primary;

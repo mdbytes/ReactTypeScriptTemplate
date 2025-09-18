@@ -4,7 +4,6 @@ import { Navbar } from './Navbar';
 import { CookiesApproval } from './CookiesApproval';
 
 import { BackToTop } from './BackToTop';
-import { Outlet } from 'react-router-dom';
 import { ScrollToTop } from './ScrollToTop';
 
 export const Layout = () => {
@@ -12,7 +11,7 @@ export const Layout = () => {
     <Fragment>
       <ScrollToTop />
       <Navbar />
-      <Outlet />
+
       <Footer />
       <BackToTop />
       <CookiesApproval />

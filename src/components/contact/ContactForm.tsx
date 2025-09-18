@@ -1,3 +1,5 @@
+'use client';
+
 import {
   FormEvent,
   FormEventHandler,
@@ -9,15 +11,16 @@ import emailjs from '@emailjs/browser';
 import { EMAILJS_USER } from '../../config/keys';
 
 type ButtonRef = MutableRefObject<HTMLButtonElement> | MutableRefObject<null>;
+type InputRef = MutableRefObject<HTMLInputElement> | MutableRefObject<null>;
 type DivRef = MutableRefObject<HTMLDivElement> | MutableRefObject<null>;
 type FormRef = MutableRefObject<HTMLFormElement> | MutableRefObject<null>;
 
 export const ContactForm = () => {
-  let closeRef: ButtonRef = useRef(null);
-  let submitRef: ButtonRef = useRef(null);
-  let successRef: DivRef = useRef(null);
-  let errorRef: DivRef = useRef(null);
-  let contactRef: FormRef = useRef(null);
+  let closeRef: ButtonRef = useRef<HTMLButtonElement>(null);
+  let submitRef: InputRef = useRef<HTMLInputElement>(null);
+  let successRef: DivRef = useRef<HTMLDivElement>(null);
+  let errorRef: DivRef = useRef<HTMLDivElement>(null);
+  let contactRef: FormRef = useRef<HTMLFormElement>(null);
 
   const confirmSend = () => {
     if (closeRef.current && submitRef.current) {

@@ -1,15 +1,20 @@
-import { Callout } from '../callout/Callout';
+'use client';
+
+import React from 'react';
 import { PageHeader } from '../layout/PageHeader';
-import Leadership from './Leadership';
 import { WhoWeAre } from './WhoWeAre';
+import Leadership from './Leadership';
+import { Callout } from '../callout/Callout';
+import { Slider } from '../slider/Slider';
 
 export const About = () => (
   <div className='about'>
     <PageHeader page='About Us' icon='fa-solid fa-book-open' />
     <WhoWeAre />
     <hr className='section' />
-    <Leadership />
+    <Slider id={'carousel-slider'} />
     <hr className='section' />
+
     <Callout />
   </div>
 );

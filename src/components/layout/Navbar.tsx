@@ -1,14 +1,17 @@
+'use client';
+
 import React, { MutableRefObject, useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 import logo from '../../assets/images/logo.svg';
+import Image from 'next/image';
 
 type InputRef = MutableRefObject<HTMLInputElement> | MutableRefObject<null>;
 type ButtonRef = MutableRefObject<HTMLButtonElement> | MutableRefObject<null>;
 type NavLinkRef = MutableRefObject<HTMLElement> | MutableRefObject<null>;
 
 export const Navbar = () => {
-  let searchTermRef: InputRef = useRef(null);
-  let navTogglerRef: ButtonRef = useRef(null);
+  let searchTermRef: InputRef = useRef<HTMLInputElement>(null);
+  let navTogglerRef: ButtonRef = useRef<HTMLButtonElement>(null);
   let homeRef: NavLinkRef = useRef(null);
   let aboutRef: NavLinkRef = useRef(null);
   let faqRef: NavLinkRef = useRef(null);
@@ -17,10 +20,12 @@ export const Navbar = () => {
 
   const onSearchSubmit = (evt: React.SyntheticEvent) => {
     evt.preventDefault();
-    let url =
-      'https://www.google.com/search?q=mdbytes.com+md+web+technologies+' +
-      searchTermRef?.current?.value;
-    window.location.href = url;
+    if (searchTermRef.current) {
+      let url =
+        'https://www.google.com/search?q=mdbytes.com+md+web+technologies+' +
+        searchTermRef.current.value;
+      window.location.href = url;
+    }
   };
 
   useEffect(() => {
@@ -35,19 +40,19 @@ export const Navbar = () => {
     // Close the mobile nav display when a link is clicked
     if (navTogglerRef) {
       for (let link of linkRefs) {
-        link?.current?.addEventListener('click', () => {
-          navTogglerRef.current?.click();
-        });
+        // link?.current?.addEventListener('click', () => {
+        //   navTogglerRef.current?.click();
+        // });
       }
     }
   }, []);
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark fixed-top'>
-        <div className='container-fluid'>
+      <div className='container-fluid'>
+        <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
           <a className='navbar-brand' href='/'>
-            <img
+            <Image
               src={logo}
               alt='site logo in navbar'
               className='site-logo'
@@ -69,55 +74,55 @@ export const Navbar = () => {
           <div className='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
               <li className='nav-item'>
-                <NavLink
+                <Link
                   ref={homeRef}
                   id='home-link'
                   className='nav-link'
                   aria-current='page'
-                  to='/'
+                  href='/'
                 >
                   Home
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item'>
-                <NavLink
+                <Link
                   ref={aboutRef}
                   className='nav-link'
                   aria-current='page'
-                  to='/about'
+                  href='/about'
                 >
                   About
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item'>
-                <NavLink
+                <Link
                   ref={faqRef}
                   className='nav-link'
                   aria-current='page'
-                  to='/faq'
+                  href='/faq'
                 >
                   FAQ
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item'>
-                <NavLink
+                <Link
                   ref={contactRef}
                   className='nav-link'
                   aria-current='page'
-                  to='/contact'
+                  href='/contact'
                 >
                   Contact
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item'>
-                <NavLink
+                <Link
                   ref={privacyRef}
                   className='nav-link'
                   aria-current='page'
-                  to='/privacy'
+                  href='/privacy'
                 >
                   Privacy
-                </NavLink>
+                </Link>
               </li>
             </ul>
             <form
@@ -142,8 +147,8 @@ export const Navbar = () => {
               </button>
             </form>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </>
   );
 };

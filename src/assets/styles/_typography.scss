@@ -28,15 +28,24 @@ h6 {
 }
 
 .logo-font {
-  font-family: 'MuseoModerno', cursive;
+  font-family: 'MuseoModerno', sans-serif;
   font-weight: 800;
-  letter-spacing: -0.2rem;
+  letter-spacing: -0.3rem;
   margin-right: 0.2rem;
+}
+
+.footer .logo-font {
+  font-size: 1.75rem;
 }
 
 .name-font {
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: -0.2rem;
+}
+
+.footer .name-font {
+  font-size: 2rem;
 }
 
 .heading {

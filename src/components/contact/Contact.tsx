@@ -4,34 +4,34 @@ import { ContactForm } from './ContactForm';
 
 export const Contact = () => {
   return (
-    <div className="contact">
-      <PageHeader page="Contact Us" icon="fa-solid fa-envelope" />
+    <div className='contact'>
+      <PageHeader page='Contact Us' icon='fa-solid fa-envelope' />
 
-      <section id="contact" className="get-started container-fluid">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <div className="cta-info w-100">
-                <h3 className="display-4">Next steps?</h3>
+      <section id='contact' className='get-started container-fluid container'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-6'>
+              <div className='cta-info w-100'>
+                <h3 className='display-4'>Next steps?</h3>
                 <p style={{ color: 'black' }}>
                   Let's get started on an awesome website for you!
                 </p>
-                <ul className="fa-ul">
+                <ul className='fa-ul'>
                   <li>
-                    <span className="fa-li">
-                      <i className="fa-solid fa-envelope"></i>
+                    <span className='fa-li'>
+                      <i className='fa-solid fa-envelope'></i>
                     </span>
                     Send us a message today.
                   </li>
                   <li>
-                    <span className="fa-li">
-                      <i className="fa-solid fa-flag-checkered"></i>
+                    <span className='fa-li'>
+                      <i className='fa-solid fa-flag-checkered'></i>
                     </span>
                     Give us an idea of your strategic objectives.
                   </li>
                   <li>
-                    <span className="fa-li">
-                      <i className="fa-solid fa-money-bill-1-wave"></i>
+                    <span className='fa-li'>
+                      <i className='fa-solid fa-money-bill-1-wave'></i>
                     </span>
                     Tell us about your business needs.
                   </li>

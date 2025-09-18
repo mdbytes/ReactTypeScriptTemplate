@@ -1,16 +1,17 @@
-import { NavLink } from 'react-router-dom'
-import logo from '../../assets/images/logo.svg'
+import Link from 'next/link';
+import logo from '../../assets/images/logo.svg';
+import Image from 'next/image';
 
 export const Footer = () => {
   return (
-    <div className='container-fluid bg-dark text-white'>
+    <div className='container-fluid footer bg-dark text-white'>
       <footer className='row border-top py-5'>
         <div className='row'>
           <div className='col-md-4 mb-3'>
             <div className='row created-by'>
               <p>
-                Created by <span className='logo-font'>md</span>{' '}
-                <span className='name-font'>Web Technologies</span>
+                Created by <span className='logo-font'>md</span>
+                <span className='name-font'>Bytes</span>
               </p>
             </div>
             <div className='row open-source-icons'>
@@ -119,24 +120,24 @@ export const Footer = () => {
             <h5>Pages</h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
-                <NavLink to='/' className='nav-link p-0 text-white'>
+                <Link href='/' className='nav-link p-0 text-white'>
                   Home
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item mb-2'>
-                <NavLink to='/about' className='nav-link p-0 text-white'>
+                <Link href='/about' className='nav-link p-0 text-white'>
                   About
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item mb-2'>
-                <NavLink to='/faq' className='nav-link p-0 text-white'>
+                <Link href='/faq' className='nav-link p-0 text-white'>
                   FAQ
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item mb-2'>
-                <NavLink to='/contact' className='nav-link p-0 text-white'>
+                <Link href='/contact' className='nav-link p-0 text-white'>
                   Contact
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </div>
@@ -145,25 +146,25 @@ export const Footer = () => {
             <h5>Terms and Conditions</h5>
             <ul className='nav flex-column'>
               <li className='nav-item mb-2'>
-                <NavLink to='/privacy' className='nav-link p-0 text-white'>
+                <Link href='/privacy' className='nav-link p-0 text-white'>
                   Privacy Policy
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item mb-2'>
-                <NavLink to='/privacy' className='nav-link p-0 text-white'>
+                <Link href='/privacy' className='nav-link p-0 text-white'>
                   Cookie Policy
-                </NavLink>
+                </Link>
               </li>
               <li className='nav-item mb-2'>
-                <NavLink to='/terms' className='nav-link p-0 text-white'>
+                <Link href='/terms' className='nav-link p-0 text-white'>
                   Universal Terms of Service
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </div>
 
           <div className='col-md-2 site-logo-holder'>
-            <img
+            <Image
               src={logo}
               alt='site logo in footer'
               className='site-logo'
@@ -173,10 +174,11 @@ export const Footer = () => {
         </div>
         <div className='row text-center'>
           <p>
-            &copy;2023 <span className='logo-font'>md</span> Web Technologies
+            &copy;2023 <span className='logo-font'>md</span>
+            <span className='name-font'>Bytes</span>
           </p>
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};

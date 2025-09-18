@@ -1,36 +1,37 @@
 import globalCompanyPic1 from '../../assets/images/WebDevCustom.png';
 import globalCompanyPic2 from '../../assets/images/OnlineMeeting.png';
 import study from '../../assets/images/team-landscape.png';
+import Image from 'next/image';
 
 export const GlobalCompany = () => {
   return (
     <>
       <div className='overview'>
         <h3 className='heading--section animate__animated animate__fadeInRightBig'>
-          <span className='logo-font'>md</span> Web Technologies&nbsp;
-          <i className='fa-solid fa-earth-americas'></i>
+          <span className='logo-font'>md</span>
+          <span className='name-font'>Bytes</span>&nbsp;
         </h3>
       </div>
 
       <div className='row' id='who-we-are-global'>
         <div className='col-xl-3 community-content'>
           <div className='global-company-image left animate__animated animate__fadeInLeftBig'>
-            <img
+            <Image
               src={globalCompanyPic1}
               alt='global company'
               className='img-fluid'
             />
           </div>
         </div>
-        <div className='col-xl-6  community-content animate__animated animate__fadeInUpBig'>
+
+        <div className='col-lg-9  community-content animate__animated animate__fadeInUpBig'>
           <div className='content'>
             <p>
-              Headquartered in Cedar Rapids, Iowa, MD Web Technologies lives and
-              breaths by the power of the global freelance market for
-              development services.
+              Headquartered in Cedar Rapids, Iowa, MD Bytes lives and breaths by
+              the power of the global freelance market for development services.
             </p>
             <p>
-              <img src={study} alt={'study'} />
+              <Image src={study} alt={'study'} />
               According to a{' '}
               <a
                 href='https://flexiple.com/freelance/freelance-statistics-and-trends-2020/'
@@ -82,15 +83,6 @@ export const GlobalCompany = () => {
               Using the freelance marketplace both as a source of revenue and
               resources as needed offers many benefits:
             </p>
-          </div>
-        </div>
-        <div className='col-xl-3 community-content'>
-          <div className='global-company-image right animate__animated animate__fadeInRightBig'>
-            <img
-              src={globalCompanyPic2}
-              alt='global company'
-              className='img-fluid'
-            />
           </div>
         </div>
       </div>

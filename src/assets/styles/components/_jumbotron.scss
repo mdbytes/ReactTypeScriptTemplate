@@ -10,13 +10,17 @@
   justify-content: center;
 
   .logo-font {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: $secondary;
+  }
+
+  .name-font {
+    font-size: 2.75rem;
   }
 }
 
 .jumbotron-logo {
-  height: 10vh;
+  height: 200px;
   pointer-events: none;
   margin-top: 2rem;
   margin-bottom: 2rem;

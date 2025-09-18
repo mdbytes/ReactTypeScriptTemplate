@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import martinPic from '../../assets/images/martin.jpeg';
 
 const Leadership = () => {
@@ -13,7 +14,7 @@ const Leadership = () => {
         <div className='col-lg-6 col-xl-4 leader'>
           <h5>Martin Dwyer</h5>
           <p>
-            <img src={martinPic} alt='martin' className='img-fluid martin' />
+            <Image src={martinPic} alt='martin' className='img-fluid martin' />
             <b>Founder and CEO Martin Dwyer</b> is a proven leader and innovator
             in the business world. His background includes, among other things,
             over ten years in senior leadership of Fortune 100 companies. Martin

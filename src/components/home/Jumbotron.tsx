@@ -1,7 +1,10 @@
+'use client';
+
 import React from 'react';
 import logo from '../../assets/images/logo.svg';
 import homePhoto from '../../assets/images/WebDeveloper.png';
 import { featuresClick } from '../features/Features';
+import Image from 'next/image';
 
 function Jumbotron() {
   return (
@@ -10,11 +13,16 @@ function Jumbotron() {
         <div>
           <h1 className='heading'>Website Template</h1>
           <p className='heading--tagline'>
-            from <span className='logo-font'>md</span>{' '}
-            <span className='name-font'>Web Technologies</span>
+            from <span className='logo-font'>md</span>
+            <span className='name-font'>Bytes</span>
           </p>
           <div className='col-md-6 jumbotron-header'>
-            <img src={logo} className='jumbotron-logo site-logo' alt='logo' />
+            <Image
+              src={logo}
+              className='jumbotron-logo site-logo'
+              alt='logo'
+              height='200'
+            />
           </div>
         </div>
 
@@ -27,7 +35,7 @@ function Jumbotron() {
         </button>
       </div>
       <div className='col-md-6 site-info'>
-        <img
+        <Image
           src={homePhoto}
           alt='home '
           className='img-fluid animate__animated animate__zoomInDown'

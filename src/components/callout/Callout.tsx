@@ -1,12 +1,13 @@
 import React from 'react';
 import homePhoto from '../../assets/images/Startup.png';
+import Image from 'next/image';
 
 export const Callout = () => {
   return (
     <div className='container-fluid callout'>
       <div id='what-we-do-callout' className='row'>
         <div className='col-lg-6 callout--image'>
-          <img
+          <Image
             src={homePhoto}
             className='img-fluid'
             alt='home page service callout'

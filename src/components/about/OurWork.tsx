@@ -1,5 +1,3 @@
-import { Slider } from '../slider/Slider';
-
 export const OurWork = () => {
   return (
     <div className='row content our-work'>
@@ -15,9 +13,7 @@ export const OurWork = () => {
           simply click on a site here if it you want to see more.
         </p>
       </div>
-      <div className='col-lg-7'>
-        <Slider id='about-slider' />
-      </div>
+      <div className='col-lg-7'></div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { SliderProps } from './slideData';
+import Image from 'next/image';
 
 export const Slides = (props: SliderProps) => {
   let count = 0;
@@ -9,9 +10,12 @@ export const Slides = (props: SliderProps) => {
       {props.slides.map((slide) => {
         count++;
         return (
-          <div className={`carousel-item ${count === 1 ? 'active' : ''}`}>
-            <a href='https://google.com'>
-              <img
+          <div
+            key={count}
+            className={`carousel-item ${count === 1 ? 'active' : ''}`}
+          >
+            <a href={slide.link}>
+              <Image
                 src={slide.image}
                 className='d-block w-100'
                 alt={slide.alt}

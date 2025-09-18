@@ -8,8 +8,6 @@ export const WhoWeAre = () => {
       <GlobalCompany />
       <hr className='section' />
       <Strengths />
-      <hr className='section' />
-      <OurWork />
     </div>
   );
 };
