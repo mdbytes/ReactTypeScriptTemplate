@@ -10,14 +10,15 @@ type SliderProps = {
 
 export const Slider = (props: SliderProps) => {
   useEffect(() => {
-    let nextClick: HTMLButtonElement | null;
-    nextClick = document.querySelector('.carousel-control-next-icon');
+    const nextClick: HTMLButtonElement | null = document.querySelector(
+      '.carousel-control-next-icon'
+    );
     nextClick?.click();
   }, []);
 
   return (
     <div className='container'>
-      <h2 className='text-center fw-bold pt-5'>Our Work</h2>
+      <h2 className='heading--section text-center pt-5'>Our Work</h2>
       <p className='text-center '>Click Any Image to Visit Site</p>
       <div
         id={props.id}

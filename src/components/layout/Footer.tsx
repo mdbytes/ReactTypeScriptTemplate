@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import logo from '../../assets/images/logo.svg';
 import Image from 'next/image';
 
 export const Footer = () => {
@@ -165,10 +164,11 @@ export const Footer = () => {
 
           <div className='col-md-2 site-logo-holder'>
             <Image
-              src={logo}
-              alt='site logo in footer'
-              className='site-logo'
-              height='75'
+              src={'/images/logo.svg'}
+              height={50}
+              width={50}
+              className=''
+              alt='...'
             />
           </div>
         </div>

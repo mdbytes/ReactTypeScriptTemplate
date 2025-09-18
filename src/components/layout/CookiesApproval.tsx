@@ -5,9 +5,8 @@ import { useEffect, useState } from 'react';
 export const CookiesApproval = () => {
   const [cookiesApproved, setCookiesApproved] = useState(false);
 
-  let cookieDisclosure: HTMLButtonElement | null;
-
-  cookieDisclosure = document.querySelector('#cookie-disclosure');
+  const cookieDisclosure: HTMLButtonElement | null =
+    document.querySelector('#cookie-disclosure');
 
   const cookiesApproval = () => {
     if (window !== null && cookieDisclosure) {

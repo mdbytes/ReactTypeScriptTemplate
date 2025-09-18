@@ -6,10 +6,11 @@ export const BackToTop = () => {
   const backToTop = () => {
     window.scrollTo(0, 0);
   };
-
   useEffect(() => {
+    /* eslint-disable  @typescript-eslint/no-require-imports */
     require('bootstrap/dist/js/bootstrap.min.js');
   }, []);
+
   return (
     <div id='back-to-top'>
       <button onClick={() => backToTop()}>

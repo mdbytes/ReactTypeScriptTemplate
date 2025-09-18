@@ -3,24 +3,23 @@
 import {
   FormEvent,
   FormEventHandler,
-  MutableRefObject,
+  RefObject,
   useEffect,
   useRef,
 } from 'react';
 import emailjs from '@emailjs/browser';
-import { EMAILJS_USER } from '../../config/keys';
 
-type ButtonRef = MutableRefObject<HTMLButtonElement> | MutableRefObject<null>;
-type InputRef = MutableRefObject<HTMLInputElement> | MutableRefObject<null>;
-type DivRef = MutableRefObject<HTMLDivElement> | MutableRefObject<null>;
-type FormRef = MutableRefObject<HTMLFormElement> | MutableRefObject<null>;
+type ButtonRef = RefObject<HTMLButtonElement> | RefObject<null>;
+type InputRef = RefObject<HTMLInputElement> | RefObject<null>;
+type DivRef = RefObject<HTMLDivElement> | RefObject<null>;
+type FormRef = RefObject<HTMLFormElement> | RefObject<null>;
 
 export const ContactForm = () => {
-  let closeRef: ButtonRef = useRef<HTMLButtonElement>(null);
-  let submitRef: InputRef = useRef<HTMLInputElement>(null);
-  let successRef: DivRef = useRef<HTMLDivElement>(null);
-  let errorRef: DivRef = useRef<HTMLDivElement>(null);
-  let contactRef: FormRef = useRef<HTMLFormElement>(null);
+  const closeRef: ButtonRef = useRef<HTMLButtonElement>(null);
+  const submitRef: InputRef = useRef<HTMLInputElement>(null);
+  const successRef: DivRef = useRef<HTMLDivElement>(null);
+  const errorRef: DivRef = useRef<HTMLDivElement>(null);
+  const contactRef: FormRef = useRef<HTMLFormElement>(null);
 
   const confirmSend = () => {
     if (closeRef.current && submitRef.current) {
@@ -33,10 +32,11 @@ export const ContactForm = () => {
 
   const sendEmail: FormEventHandler = (e: FormEvent) => {
     e.preventDefault();
-    let form: HTMLFormElement = e.target as HTMLFormElement;
+    const form: HTMLFormElement = e.target as HTMLFormElement;
     emailjs.sendForm('service_998jv3x', 'template_gkvwqkc', form).then(
       (result) => {
         if (successRef.current && contactRef.current) {
+          console.log(result);
           successRef.current.innerHTML =
             'Thanks!  We will reply to your message within 24 hours.';
           contactRef.current.reset();
@@ -54,7 +54,9 @@ export const ContactForm = () => {
   };
 
   useEffect(() => {
-    emailjs.init(EMAILJS_USER);
+    if (process.env.EMAILJS_USER) {
+      emailjs.init(process.env.EMAILJS_USER);
+    }
   }, []);
 
   return (

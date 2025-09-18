@@ -130,8 +130,7 @@
       }
 
       img {
-        width: 50%;
-        max-width: 300px;
+        width: 90%;
         display: block;
         margin: 0rem auto 1rem auto;
         float: none;
@@ -151,8 +150,8 @@
     align-items: center;
     justify-content: center;
 
-    @include media-breakpoint-down(lg) {
-      flex-direction: row;
+    @include media-breakpoint-down(xl) {
+      display: none;
     }
 
     picture {

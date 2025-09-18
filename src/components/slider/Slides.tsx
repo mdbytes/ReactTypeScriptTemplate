@@ -20,6 +20,9 @@ export const Slides = (props: SliderProps) => {
                 className='d-block w-100'
                 alt={slide.alt}
                 title={`Click to visit site: ${slide.title}`}
+                height={500}
+                width={800}
+                style={{ width: '80%', height: 'auto' }}
               />
             </a>
             <div className='carousel-caption d-none d-md-block'>

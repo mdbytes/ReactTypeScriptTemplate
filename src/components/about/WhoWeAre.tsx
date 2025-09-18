@@ -1,6 +1,5 @@
 import { GlobalCompany } from './GlobalCompany';
 import { Strengths } from './Strengths';
-import { OurWork } from './OurWork';
 
 export const WhoWeAre = () => {
   return (

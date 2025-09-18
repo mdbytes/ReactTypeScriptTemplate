@@ -1,5 +1,3 @@
-import globalCompanyPic1 from '../../assets/images/WebDevCustom.png';
-import globalCompanyPic2 from '../../assets/images/OnlineMeeting.png';
 import study from '../../assets/images/team-landscape.png';
 import Image from 'next/image';
 
@@ -17,9 +15,12 @@ export const GlobalCompany = () => {
         <div className='col-xl-3 community-content'>
           <div className='global-company-image left animate__animated animate__fadeInLeftBig'>
             <Image
-              src={globalCompanyPic1}
-              alt='global company'
-              className='img-fluid'
+              src={'/images/WebDevCustom.png'}
+              alt={'global company'}
+              width={800}
+              height={800}
+              style={{ maxWidth: '80%', height: 'auto' }}
+              className={'img-fluid'}
             />
           </div>
         </div>
@@ -31,7 +32,12 @@ export const GlobalCompany = () => {
               the power of the global freelance market for development services.
             </p>
             <p>
-              <Image src={study} alt={'study'} />
+              <Image
+                src={'/images/team-landscape.png'}
+                height={100}
+                width={150}
+                alt={'study'}
+              />
               According to a{' '}
               <a
                 href='https://flexiple.com/freelance/freelance-statistics-and-trends-2020/'

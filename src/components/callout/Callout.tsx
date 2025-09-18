@@ -8,9 +8,11 @@ export const Callout = () => {
       <div id='what-we-do-callout' className='row'>
         <div className='col-lg-6 callout--image'>
           <Image
-            src={homePhoto}
+            src={'/images/Startup.png'}
+            height={500}
+            width={500}
             className='img-fluid'
-            alt='home page service callout'
+            alt='...'
           />
         </div>
         <div className='col-lg-6 callout--text'>

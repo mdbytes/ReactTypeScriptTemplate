@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Footer } from './layout/Footer';
 import { Navbar } from './layout/Navbar';
+import Link from 'next/link';
 
 /**
  * The NotFound function takes no parameters and returns a JSX element
@@ -24,11 +25,11 @@ export const NotFound = () => {
         <h1>OOPS! </h1>
         <h2>Page Not Found</h2>
 
-        <p>We couldn't find that page on our site.</p>
+        <p>We couldn&apos;t find that page on our site.</p>
 
         <p>Redirecting to Home Page</p>
         <p>
-          Click <a href='/'>here</a> to go there now.
+          Click <Link href='/'>here</Link> to go there now.
         </p>
       </div>
       <Footer />

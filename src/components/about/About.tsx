@@ -3,7 +3,6 @@
 import React from 'react';
 import { PageHeader } from '../layout/PageHeader';
 import { WhoWeAre } from './WhoWeAre';
-import Leadership from './Leadership';
 import { Callout } from '../callout/Callout';
 import { Slider } from '../slider/Slider';
 

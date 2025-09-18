@@ -8,27 +8,48 @@ export const Strengths = () => {
   return (
     <div className='container'>
       <div className='row content'>
-        <h3 className='heading--section text-center'>
-          Our Strengths&nbsp;
-          <i className='fa-solid fa-earth-asia'></i>
-        </h3>
+        <h3 className='heading--section text-center'>Our Strengths&nbsp;</h3>
       </div>
       <div className='row content'>
         <div className='col-xl-3 col-lg-6 advantage'>
+          <Image
+            src={'/images/global.png'}
+            height={600}
+            width={600}
+            className='img-fluid'
+            alt='advantage 1'
+          />
           <h4>Global Market</h4>
-          <Image src={advantagePic1} alt='advantage 1' />
         </div>
         <div className='col-xl-3 col-lg-6 advantage'>
+          <Image
+            src={'/images/flexible.png'}
+            height={600}
+            width={600}
+            className='img-fluid'
+            alt='advantage 1'
+          />
           <h4>Flexibility</h4>
-          <Image src={advantagePic2} alt='advantage 2' />
         </div>
         <div className='col-xl-3 col-lg-6 advantage'>
+          <Image
+            src={'/images/expertise.png'}
+            height={600}
+            width={600}
+            className='img-fluid'
+            alt='advantage 1'
+          />
           <h4>Expertise</h4>
-          <Image src={advantagePic3} alt='advantage 3' />
         </div>
         <div className='col-xl-3 col-lg-6 advantage'>
+          <Image
+            src={'/images/perspective.png'}
+            height={600}
+            width={600}
+            className='img-fluid'
+            alt='advantage 1'
+          />
           <h4>Perspective</h4>
-          <Image src={advantagePic4} alt='advantage 4' />
         </div>
       </div>
     </div>

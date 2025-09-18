@@ -1,27 +1,29 @@
 'use client';
 
-import React, { MutableRefObject, useEffect, useRef } from 'react';
+import React, { RefObject, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import logo from '../../assets/images/logo.svg';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
-type InputRef = MutableRefObject<HTMLInputElement> | MutableRefObject<null>;
-type ButtonRef = MutableRefObject<HTMLButtonElement> | MutableRefObject<null>;
-type NavLinkRef = MutableRefObject<HTMLElement> | MutableRefObject<null>;
+type InputRef = RefObject<HTMLInputElement> | RefObject<null>;
+type ButtonRef = RefObject<HTMLButtonElement> | RefObject<null>;
+type NavLinkRef = RefObject<HTMLAnchorElement> | RefObject<null>;
 
 export const Navbar = () => {
-  let searchTermRef: InputRef = useRef<HTMLInputElement>(null);
-  let navTogglerRef: ButtonRef = useRef<HTMLButtonElement>(null);
-  let homeRef: NavLinkRef = useRef(null);
-  let aboutRef: NavLinkRef = useRef(null);
-  let faqRef: NavLinkRef = useRef(null);
-  let contactRef: NavLinkRef = useRef(null);
-  let privacyRef: NavLinkRef = useRef(null);
+  const pathname = usePathname();
+  const searchTermRef: InputRef = useRef<HTMLInputElement>(null);
+  const navTogglerRef: ButtonRef = useRef<HTMLButtonElement>(null);
+  const homeRef: NavLinkRef = useRef<HTMLAnchorElement>(null);
+  const aboutRef: NavLinkRef = useRef<HTMLAnchorElement>(null);
+  const faqRef: NavLinkRef = useRef<HTMLAnchorElement>(null);
+  const contactRef: NavLinkRef = useRef<HTMLAnchorElement>(null);
+  const privacyRef: NavLinkRef = useRef<HTMLAnchorElement>(null);
 
   const onSearchSubmit = (evt: React.SyntheticEvent) => {
     evt.preventDefault();
     if (searchTermRef.current) {
-      let url =
+      const url =
         'https://www.google.com/search?q=mdbytes.com+md+web+technologies+' +
         searchTermRef.current.value;
       window.location.href = url;
@@ -29,7 +31,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    let linkRefs: NavLinkRef[] = [
+    const linkRefs: NavLinkRef[] = [
       homeRef,
       aboutRef,
       faqRef,
@@ -38,27 +40,47 @@ export const Navbar = () => {
     ];
 
     // Close the mobile nav display when a link is clicked
+    // Set active class on current page
     if (navTogglerRef) {
-      for (let link of linkRefs) {
-        // link?.current?.addEventListener('click', () => {
-        //   navTogglerRef.current?.click();
-        // });
+      let haveActive: boolean = false;
+      for (const link of linkRefs) {
+        // Setting mobile dropdown to close on link click
+        link?.current?.addEventListener('click', () => {
+          navTogglerRef.current?.click();
+        });
+
+        // Setting active class on nav link
+        link.current?.classList.remove('active');
+
+        /* eslint-disable  @typescript-eslint/no-explicit-any */
+        const linkTextContent: string | any =
+          link.current?.textContent.toLowerCase();
+        /* eslint-disable  @typescript-eslint/no-explicit-any */
+        const path: string | any = pathname.replace('/', '').toLowerCase();
+        if (path.includes(linkTextContent)) {
+          link.current?.classList.add('active');
+          haveActive = true;
+        }
+      }
+      if (!haveActive) {
+        homeRef.current?.classList.add('active');
       }
     }
-  }, []);
+  }, [pathname]);
 
   return (
     <>
       <div className='container-fluid'>
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
-          <a className='navbar-brand' href='/'>
+          <Link className='navbar-brand' href='/'>
             <Image
-              src={logo}
-              alt='site logo in navbar'
-              className='site-logo'
-              height='32'
+              src={'/images/logo.svg'}
+              height={32}
+              width={32}
+              className=''
+              alt='...'
             />
-          </a>
+          </Link>
           <button
             ref={navTogglerRef}
             className='navbar-toggler'

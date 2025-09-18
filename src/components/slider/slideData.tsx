@@ -1,40 +1,39 @@
-import careers from '../../assets/images/careers.jpeg';
-import college from '../../assets/images/college.jpeg';
-import northPark from '../../assets/images/north-park.jpeg';
-import moneyMatters from '../../assets/images/money-matters.jpeg';
-import wildThings from '../../assets/images/wild-things.jpeg';
-
 export type SliderProps = {
-  slides: { image: any; alt: string; title: string; link: string }[];
+  slides: {
+    image: string;
+    alt: string;
+    title: string;
+    link: string;
+  }[];
 };
 
 export const slides = [
   {
-    image: careers,
+    image: '/images/careers.jpeg',
     alt: 'careers',
     title: 'Careers Employment Application',
     link: 'https://careers.mdbytes.us/',
   },
   {
-    image: college,
+    image: '/images/college.jpeg',
     alt: 'college theme',
     title: 'Institutional model',
     link: 'https://college.mdbytes.us/',
   },
   {
-    image: northPark,
+    image: '/images/north-park.jpeg',
     alt: 'north park',
     title: 'North Park Colorado',
     link: 'https://north.park.mdbytes.us/',
   },
   {
-    image: wildThings,
+    image: '/images/wild-things.jpeg',
     alt: 'wild things',
     title: 'Wild Things Photography',
     link: 'https://www.gowildthings.com/',
   },
   {
-    image: moneyMatters,
+    image: '/images/money-matters.jpeg',
     alt: 'money matters',
     title: 'Money Matters',
     link: 'https://financial-calculators-six.vercel.app/',

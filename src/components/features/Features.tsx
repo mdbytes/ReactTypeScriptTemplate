@@ -1,11 +1,4 @@
 import React from 'react';
-
-import featureOne from '../../assets/images/WebDevCustom.png';
-import featureTwo from '../../assets/images/Winner1.png';
-import featureThree from '../../assets/images/Growth.png';
-
-import careers from '../../assets/images/careers.jpeg';
-import college from '../../assets/images/college.jpeg';
 import Image from 'next/image';
 
 export const featuresClick = () => {
@@ -22,7 +15,13 @@ export const Features = () => {
 
       <div className='row'>
         <div className='card col-md-4'>
-          <Image src={featureOne} className='card-img-top' alt='...' />
+          <Image
+            src={'/images/WebDevCustom.png'}
+            height={400}
+            width={400}
+            className='img-fluid card-img-top'
+            alt='...'
+          />
           <div className='card-body'>
             <div>
               <h5 className='card-title'>Customized</h5>
@@ -36,7 +35,13 @@ export const Features = () => {
           </div>
         </div>
         <div className='card col-md-4'>
-          <Image src={featureTwo} className='card-img-top' alt='...' />
+          <Image
+            src={'/images/Winner1.png'}
+            height={400}
+            width={400}
+            className='img-fluid card-img-top'
+            alt='...'
+          />
           <div className='card-body'>
             <div>
               <h5 className='card-title'>Optimized</h5>
@@ -49,7 +54,13 @@ export const Features = () => {
           </div>
         </div>
         <div className='card col-md-4'>
-          <Image src={featureThree} className='card-img-top' alt='...' />
+          <Image
+            src={'/images/Growth.png'}
+            height={400}
+            width={400}
+            className='img-fluid card-img-top'
+            alt='...'
+          />
           <div className='card-body'>
             <div>
               <h5 className='card-title'>Expandable</h5>
@@ -74,18 +85,20 @@ export const Features = () => {
         <div className='row'>
           <div className='col-md-6 image-holder'>
             <Image
-              src={college}
-              className='img-fluid'
-              alt='cc books'
-              title='Online bookstore'
+              src={'/images/college.jpeg'}
+              height={400}
+              width={400}
+              className='img-fluid card-img-top'
+              alt='...'
             />
           </div>
           <div className='col-md-6 image-holder'>
             <Image
-              src={careers}
-              className='img-fluid'
-              alt='careers'
-              title='Careers employment application'
+              src={'/images/careers.jpeg'}
+              height={400}
+              width={400}
+              className='img-fluid card-img-top'
+              alt='...'
             />
           </div>
         </div>
